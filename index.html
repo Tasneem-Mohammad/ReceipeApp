@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <title>Receipe App</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Receipe App</h1>
+            <form>
+                <input type="text" placeholder="Search for recepies" class="searchbox">
+                <button type="submit" class="buttonsubmit">Search</button> 
+                <div class="theme-switch">
+                <i class="fa fa-moon-o"></i>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fa fa-sun-o"></i>
+                </div>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="recipeContainer">
+                <h2> Search your favourite recepies</h2>
+            </div>
+
+            <div class="receipe-details">
+                    <button type="button" class="receipe-close-button">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                    <div class="receipe-details-content">     
+                    </div>
+                </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

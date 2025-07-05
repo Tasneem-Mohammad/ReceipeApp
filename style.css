@@ -1,0 +1,337 @@
+*{
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+body{
+    background-color: #612323;
+    color: #fff;
+
+}
+
+.skeleton {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+
+header nav{
+    background-color: #212121;
+    padding : 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+} 
+
+header nav h1{
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header nav form{
+    display: flex;
+    justify-content: center;
+   
+} 
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 12px;
+}
+
+.theme-switch i {
+    font-size: 20px;
+    color: white;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #eca4a4;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Light Mode Overrides */ 
+body.light-mode {
+    background-color:  rgb(255, 189, 189);
+    color: #212121;
+}
+
+body.light-mode nav,
+body.light-mode .recipeContainer,
+body.light-mode .recepie {
+    background-color:  rgb(222, 121, 121);;;
+    color: #212121;
+}
+
+body.light-mode .theme-switch i {
+    color: #212121;
+}
+
+body.light-mode .buttonsubmit,
+body.light-mode .receipe button,
+body.light-mode .receipe-close-button {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+body.light-mode .recepie {
+    background-color: #fff;
+    color: #212121;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .recepie h3,
+body.light-mode .recepie p {
+    color: #212121;
+}
+
+body.light-mode .recepie span {
+    color: #000;
+    font-weight: 600;
+}
+
+body.light-mode .recepie button {
+    background-color: #d84343;
+    color: white;
+}
+
+.searchbox{
+     flex-grow: 1;
+     margin-right: 10px;
+}
+
+
+.searchbox,.buttonsubmit{
+     border: none;
+     font-size: 15px;
+     padding: 15px;
+     border-radius: 4px;
+}
+
+
+.buttonsubmit{
+    background-color: rgb(204, 64, 64);
+    cursor: pointer;
+    color: #fff;
+    font-weight: 800;
+    transition: background-color 0.2 ease-in-out ;
+}
+
+.buttonsubmit:hover,.recepie button:hover , .receipe-close-button{
+    background-color: rgb(130, 6, 6);
+}
+
+
+.recipeContainer{
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+    grid-gap : 40px;
+    width: 70%;
+    margin : 10px auto;
+    padding: 30px;
+    place-items: center;
+}
+
+.recepie{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color:#b25151;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px #212121 ,  -5px -5px 10px #5a0303;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+.recepie:hover{
+    transform: scale(1.02);
+}
+.recepie img{
+    height: 300px;
+}
+
+.recepie h3{
+    font-size: 25px;
+    margin-block: 5px;
+}
+
+.recepie p{
+    font-size: 20px;
+    color: #8b4141;
+    margin : 5px 0px
+}
+
+.recepie span{
+    font-weight: 600px;
+}
+
+.recepie button{
+    font-size: 20px;
+    font-weight: 600;
+    padding :10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: rgb(163, 24, 24);
+    color: white;
+}
+
+.receipe-details{
+    display: none;
+    position: fixed;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50% , -50%);
+    -webkit-transform: translate(-50%,-50%);
+    background-color: #612323;
+
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all  0.5s ease-in-out ;
+    overflow-y: scroll;
+
+}
+
+
+.receipe-details::-webkit-scrollbar{
+    width: 10px;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+.receipe-details::-webkit-scrollbar-thumb{
+    background: #eca4a4;
+    border-radius: 16px;
+    --webkit-border-radius : 16px
+
+}
+
+.receipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+}
+.receipe-details-content{
+    padding: 30px;
+}
+
+.IngredientsList{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.receipeInstructions p{
+    line-height: 30px;
+    white-space: pre-line;
+}
+body.light-mode .receipe-details {
+    background-color: #fcecec;
+    color: #212121;
+}
+
+body.light-mode .receipeName {
+    color: #212121;
+    text-decoration-color: #d84343;
+}
+
+body.light-mode .IngredientsList li {
+    color: #333;
+}
+
+body.light-mode .receipeInstructions p {
+    color: #444;
+}
+
+body.light-mode .receipe-details-content h3 {
+    color: #d84343;
+}
+
+.receipeName,.IngredientsList,.receipeInstructions{
+    margin-bottom: 20px;
+}
+.receipe-close-button{
+    border: none;
+     font-size: 15px;
+     padding: 8px;
+     border-radius: 4px;
+     background-color:  rgb(163, 24, 24);;
+     color: #fff;
+     position: absolute;
+     top : 20px;
+     right: 20px;
+
+     width: 20px;
+     height: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+}
+/* Responsive Code*/
+@media screen and (max-width:600px){
+    header nav{
+        flex-direction: column;
+    }
+    header nav form{
+        width: 80%;
+        margin-top: 20px;
+    }
+}
