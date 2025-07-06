@@ -1,4 +1,4 @@
-🍽️ ReceipeApp
+### 🍽️ ReceipeApp
 ReceipeApp is a simple front-end web application that allows users to browse and view recipe details fetched from a public API. Built with just HTML, CSS, and JavaScript, this lightweight app showcases dynamic rendering and interactive UI features without any frameworks.
 
 
